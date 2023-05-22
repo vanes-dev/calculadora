@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Vamos calcular o seu IMC">
+  <meta name="author" content="iVip Digital">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <title>iVip Digital - Soluções em Software Personalizadas</title>
+
+  <link rel="canonical" href="https://ivip.digital">
+
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="styles.css" rel="stylesheet">
+
+  <link href="cover.css" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+
+      <title>Calculadora de IMC</title>
+      <!-- Adicione o CSS do Bootstrap -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+
+  </html>
+  
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <img class="float-md-start mb-0 me-2" src="assets/img/calculadora-logo.png" alt="iVip Digital Logo" width="250">
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="index.html">Quem sou</a>
+        <a class="nav-link fw-bold py-1 px-0 active" href="servicos.html">Calculadora</a>
+        <a class="nav-link fw-bold py-1 px-0" href="contato.html">Contacte-me</a>
+      </nav>
+    </div>
+  </header>
+ 
+  <html>
+  <head>
+      <title>Calculadora de IMC</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+      <div class="container">
+          <h1>Calculadora de IMC</h1>
+          <div class="form-group">
+              <label for="peso">Peso (kg): </label>
+              <input id="peso" type="number" step="0.01" min="0" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="altura">Altura (cm): </label>
+              <input id="altura" type="number" min="0" class="form-control">
+          </div>
+          <button onclick="calcularIMC()" class="btn btn-primary">Calcular IMC</button>
+          <p id="resultado"></p>
+      </div>
+      
+      <script>
+          function calcularIMC() {
+              var peso = document.getElementById('peso').value;
+              var altura = document.getElementById('altura').value / 100; // converte a altura de cm para m
+              var resultado = document.getElementById('resultado');
+  
+              if(peso > 0 && altura > 0) {
+                  var imc = (peso / (altura * altura)).toFixed(2);
+                  
+                  if(imc < 18.5) {
+                      resultado.innerHTML = '<div class="alert alert-secondary" role="alert">Seu IMC é ' + imc + '. IMC abaixo do indicado. Procure um especialista.</div>';
+                  } else if(imc >= 18.5 && imc < 25) {
+                      resultado.innerHTML = '<div class="alert alert-success" role="alert">Seu IMC é ' + imc + '. IMC normal. Parabéns!</div>';
+                  } else if(imc >= 25 && imc < 40) {
+                      resultado.innerHTML = '<div class="alert alert-warning" role="alert">Seu IMC é ' + imc + '. IMC de sobrepeso ou obesidade leve. Atenção.</div>';
+                  } else {
+                      resultado.innerHTML = '<div class="alert alert-danger" role="alert">Seu IMC é ' + imc + '. IMC acima do indicado. Procure um especialista.</div>';
+                  }
+              } else {
+                  resultado.innerHTML = "Por favor, insira valores válidos para peso e altura!";
+              }
+          }
+      </script>
+  </body>  
+
+  <footer class="mt-auto text-white-50">
+    <p>&copy; 2023 iVip Digital. Todos os direitos reservados.</p>
+  </footer>
+</div>
+
+</body>
+
+</html>
